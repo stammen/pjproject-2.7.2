@@ -114,6 +114,13 @@ typedef signed char int8;
 #define LIBYUV_FALSE 0
 #define LIBYUV_TRUE 1
 
+#if defined(WINAPI_FAMILY) && (WINAPI_FAMILY != WINAPI_FAMILY_DESKTOP_APP)
+#include <SdkDdkVer.h>
+#if !defined(NTDDI_WIN10_RS4) || (NTDDI_VERSION < NTDDI_WIN10_RS4)
+#define getenv(x) NULL
+#endif
+#endif
+
 // Visual C x86 or GCC little endian.
 #if defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || \
     defined(_M_IX86) || defined(__arm__) || defined(_M_ARM) ||     \
