@@ -13,6 +13,7 @@
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
+pjlib/include/pj/config_site.h
 [Rr]elease/
 [Rr]eleases/
 [Gg]enerated Files/
